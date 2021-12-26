@@ -4,11 +4,13 @@ const path = require("path");
 
 app.use(express.static('public'));
 
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, "/views/home.html")));
+app.set("view engine", "ejs")
 
-app.get("/register", (req, res) => res.sendFile(path.join(__dirname, "/views/register.html")));
+app.get("/", (req, res) => res.render("home"));
 
-app.get("/login", (req, res) => res.sendFile(path.join(__dirname, "/views/login.html")));
+app.get("/register", (req, res) => res.render("register"));
+
+app.get("/login", (req, res) => res.render("login"));
 
 app.post('/register', (req, res) => res.redirect(302, '/'));
 
