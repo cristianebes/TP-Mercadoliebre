@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+const port = process.env.PORT || 3000;
+
 app.use(express.static('public'));
 
 app.set("view engine", "ejs")
@@ -16,5 +18,5 @@ app.post('/register', (req, res) => res.redirect(302, '/'));
 
 app.post('/login', (req, res) => res.redirect(302, '/'));
 
-app.listen(process.env.PORT || 3000, () => console.log("Pagina corriendo"));
+app.listen(port, () => console.log(`Servidor iniciado - http://localhost:${port}`));
 
