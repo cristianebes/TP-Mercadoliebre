@@ -14,5 +14,5 @@ app.post('/register', (req, res) => res.redirect(302, '/'));
 
 app.post('/login', (req, res) => res.redirect(302, '/'));
 
-app.listen(3001, () => console.log("Pagina corriendo"));
+app.listen(3000, () => console.log("Pagina corriendo"));
 
